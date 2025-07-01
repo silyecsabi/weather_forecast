@@ -10,6 +10,16 @@ from meteostat import Daily, Point
 
 @dataclass
 class DataLoaderConfig:
+    """
+    Config for DataLoader.
+      - country_code: ISO country code
+      - city_name: Name of a city
+      - date_from: Start date for data loading
+      - date_to: End date for data loading
+
+    Raises:
+        ValueError: If date_from parameter is newer than date_to parameter.
+    """
     country_code: str
     city_name: str
     date_from: dt.date
